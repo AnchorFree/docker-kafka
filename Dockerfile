@@ -1,11 +1,11 @@
 FROM anapsix/alpine-java:8_jdk
 
-RUN apk add tzdata && ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime
 
 ARG kafka_version=0.10.2.1
 ARG scala_version=2.12
 
-RUN apk add --update unzip wget curl docker jq coreutils
+RUN apk add --update unzip wget curl docker jq coreutils tzdata
+RUN ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime
 RUN mkdir /etc/zookeeper /etc/kafka 
 
 ENV KAFKA_VERSION=$kafka_version SCALA_VERSION=$scala_version
