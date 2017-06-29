@@ -1,5 +1,8 @@
 FROM anapsix/alpine-java:8_jdk
 
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 ARG kafka_version=0.10.2.1
 ARG scala_version=2.12
 
