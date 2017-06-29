@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java:8_jdk
 
-RUN ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+RUN apk add tzdata && ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime
 
 ARG kafka_version=0.10.2.1
 ARG scala_version=2.12
