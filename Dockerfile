@@ -18,7 +18,7 @@ RUN chmod a+x /tmp/download-kafka.sh && \
     ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka
 RUN mkdir /opt/jmx_exporter && \
     wget -q https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/${EXPORTER_VERSION}/jmx_prometheus_javaagent-${EXPORTER_VERSION}.jar \
-    -P /opt/jmx_exporter/
+    -O /opt/jmx_exporter/jmx_prometheus_javaagent.jar
 
 VOLUME ["/kafka"]
 
