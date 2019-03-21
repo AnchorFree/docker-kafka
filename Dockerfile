@@ -1,7 +1,7 @@
 FROM anapsix/alpine-java:8_jdk
 
 
-ARG kafka_version=2.1.0
+ARG kafka_version=2.1.1
 ARG scala_version=2.12
 ARG exporter_version=0.11.0
 RUN apk add --update unzip wget curl docker jq coreutils tzdata
