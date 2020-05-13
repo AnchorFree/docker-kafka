@@ -1,12 +1,12 @@
 #!groovy
 
 pipeline {
-    agent { label 'ubuntu16' }
+    agent { label 'dockerd' }
 
     stages {
         stage('Build') {
             steps {
-                BBCDdockerBuildTagPush()
+                dockerBuildTagPush()
             }
         }
     }
